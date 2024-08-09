@@ -6,7 +6,7 @@ _"This is your next website builder!"_
 ## Overview
 
 Websanity Builder is a powerful, user-friendly tool designed to help you create stunning websites effortlessly.<br/>
-Built with Next.js, TailwindCSS, Sanity, and more to offer a seamless experience for both developers and content creators.
+Built with Next.js, Tailwind CSS, Sanity, and more to offer a seamless experience for both developers and content creators.
 
 ![websanity-builder](https://github.com/egarrisxn/website-builder/assets/126130230/84e5a962-5155-4f40-adc2-ee0e910d363d)
 
@@ -14,7 +14,7 @@ Built with Next.js, TailwindCSS, Sanity, and more to offer a seamless experience
 
 - **Sanity**: A customizable headless content management system.
 - **Next.js**: A React framework for server-side rendering and static site generation.
-- **TailwindCSS**: A utility-first CSS framework for rapidly building custom user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for rapidly building custom user interfaces.
 - **Node.js**: A JavaScript runtime for server-side development.
 
 ## Features 

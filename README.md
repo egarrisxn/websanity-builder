@@ -1,21 +1,22 @@
 # WebSanity Builder
 _"This is your next website builder!"_
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![GitHub repo size](https://img.shields.io/github/repo-size/egarrisxn/websanity-builder)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![GitHub repo size](https://img.shields.io/github/repo-size/egarrisxn/websanity-builder) ![GitHub last commit](https://img.shields.io/github/last-commit/egarrisxn/websanity-builder)
 
 ## Overview
 
-Websanity Builder is a powerful, user-friendly tool designed to help you create stunning websites effortlessly.<br/>
-Built with Next.js, TailwindCSS, Sanity, and more to offer a seamless experience for both developers and content creators.
+Websanity Builder is a powerful, user-friendly web application designed to help you effortlessly create a stunning looking website.<br/>
 
 ![websanity-builder](https://github.com/egarrisxn/website-builder/assets/126130230/84e5a962-5155-4f40-adc2-ee0e910d363d)
 
 ## Technologies
 
-- **Sanity**: A customizable headless content management system.
-- **Next.js**: A React framework for server-side rendering and static site generation.
-- **TailwindCSS**: A utility-first CSS framework for rapidly building custom user interfaces.
+- **JavaScript**: A programming language and core technology of the web.
+- **React**: A front-end JavaScript library for building user interfaces.
 - **Node.js**: A JavaScript runtime for server-side development.
+- **Next.js**: A React framework for server-side rendering and static site generation.
+- **Tailwind CSS**: A CSS framework for rapidly building custom user interfaces.
+- **Sanity**: A customizable headless content management system.
 
 ## Features 
 

@@ -1,26 +1,25 @@
 import '@/styles/index.css'
 import dynamic from 'next/dynamic'
-import { draftMode } from 'next/headers'
-import { toPlainText } from 'next-sanity'
-import { Suspense } from 'react'
-import { loadHomePage, loadSettings } from '@/sanity/loader/loadQuery'
-import { urlForOpenGraphImage } from '@/sanity/lib/utils'
-import { Navbar } from '@/components/global/Navbar'
-import { Footer } from '@/components/global/Footer'
-
+import {draftMode} from 'next/headers'
+import {toPlainText} from 'next-sanity'
+import {Suspense} from 'react'
+import {loadHomePage, loadSettings} from '@/sanity/loader/loadQuery'
+import {urlForOpenGraphImage} from '@/sanity/lib/utils'
+import {Navbar} from '@/components/global/Navbar'
+import {Footer} from '@/components/global/Footer'
 
 const LiveVisualEditing = dynamic(() => import('@/sanity/loader/LiveVisualEditing'))
 
 export async function generateMetadata() {
-  const [{ data: settings }, { data: homePage }] = await Promise.all([loadSettings(), loadHomePage()])
+  const [{data: settings}, {data: homePage}] = await Promise.all([loadSettings(), loadHomePage()])
 
   const ogImage = urlForOpenGraphImage(settings?.ogImage)
   return {
     title: homePage?.title
       ? {
-        template: `%s | ${homePage.title}`,
-        default: homePage.title || 'Websanity Builder',
-      }
+          template: `%s | ${homePage.title}`,
+          default: 'Websanity' || homePage.title,
+        }
       : undefined,
     description: homePage?.overview ? toPlainText(homePage.overview) : undefined,
     openGraph: {
@@ -33,7 +32,7 @@ export const viewport = {
   themeColor: '#000',
 }
 
-export default async function IndexRouteLayout({ children }) {
+export default async function IndexRouteLayout({children}) {
   return (
     <>
       <div className='flex min-h-screen flex-col bg-white text-black'>

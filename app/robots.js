@@ -1,3 +1,5 @@
+const siteUrl = 'https://websanitybuilder.vercel.app'
+
 export default function robots() {
   return {
     rules: [
@@ -6,7 +8,7 @@ export default function robots() {
         allow: ['/'],
       },
     ],
-    sitemap: 'https://websanitybuilder.vercel.app/sitemap.xml',
-    host: 'https://websanitybuilder.vercel.app',
+    sitemap: `${siteUrl}/sitemap.xml`,
+    host: siteUrl,
   }
 }

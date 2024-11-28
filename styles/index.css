@@ -1,0 +1,18 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: slatescale;
+  overflow-x: hidden;
+}
+
+p:not(:last-child) {
+  margin-bottom: 0.9rem;
+}
+
+ol,
+ul {
+  margin-left: 1.1rem;
+}
+
+ol {
+  list-style-type: disc;
+}

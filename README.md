@@ -1,13 +1,12 @@
 # WebSanity Builder
-_"This is your next website builder!"_
+
+![websanitybuilder](https://github.com/user-attachments/assets/0e48686c-819e-4b4c-94ca-58d808ac5e94)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![GitHub repo size](https://img.shields.io/github/repo-size/egarrisxn/websanity-builder) ![GitHub last commit](https://img.shields.io/github/last-commit/egarrisxn/websanity-builder)
 
 ## Overview
 
-WebSanity Builder is a powerful, user-friendly web application designed to help you effortlessly create a stunning looking website.<br/>
-
-![websanity-builder](https://github.com/egarrisxn/website-builder/assets/126130230/84e5a962-5155-4f40-adc2-ee0e910d363d)
+WebSanity Builder is a powerful, user-friendly web application designed to help you effortlessly create a stunning looking website.
 
 ## Technologies
 

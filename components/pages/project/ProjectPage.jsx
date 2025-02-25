@@ -15,7 +15,8 @@ export function ProjectPage({data, encodeDataAttribute}) {
       <div className='mb-14 space-y-6'>
         {/* Header */}
         <Header title={title} description={overview} />
-        <br/><br/>
+        <br />
+        <br />
         <div className='rounded-md border-2 shadow-lg'>
           {/* Image  */}
           <ImageBox
@@ -52,7 +53,11 @@ export function ProjectPage({data, encodeDataAttribute}) {
               <div className='p-3 lg:p-4'>
                 <div className='text-xs md:text-sm'>Site</div>
                 {site && (
-                  <Link target='_blank' className='text-md hover:text-indigo-900 break-words md:text-lg' href={site}>
+                  <Link
+                    target='_blank'
+                    className='text-md break-words hover:text-indigo-900 md:text-lg'
+                    href={site}
+                  >
                     {site}
                   </Link>
                 )}
@@ -64,7 +69,7 @@ export function ProjectPage({data, encodeDataAttribute}) {
               <div className='text-xs md:text-sm'>Tags</div>
               <div className='text-md flex flex-row flex-wrap text-indigo-700 md:text-lg'>
                 {tags?.map((tag, key) => (
-                  <div key={key} className='mr-1 break-words '>
+                  <div key={key} className='mr-1 break-words'>
                     #{tag}
                   </div>
                 ))}

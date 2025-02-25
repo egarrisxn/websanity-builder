@@ -10,7 +10,8 @@ export function Page({data}) {
       <div className='mb-14'>
         {/* Header */}
         <Header title={title} description={overview} />
-        <br/><br/>
+        <br />
+        <br />
         {/* Body */}
         {body && (
           <CustomPortableText

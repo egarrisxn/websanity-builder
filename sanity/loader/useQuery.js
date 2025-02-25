@@ -2,16 +2,8 @@ import * as queryStore from '@sanity/react-loader'
 import {settingsQuery} from '../lib/queries'
 
 // Exports to be used in client-only or components that render both server and client
-export const useQuery = (
-  query,
-  params,
-  options,
-) => {
-  const snapshot = queryStore.useQuery(
-    query,
-    params,
-    options,
-  )
+export const useQuery = (query, params, options) => {
+  const snapshot = queryStore.useQuery(query, params, options)
 
   // Always throw errors if there are any
   if (snapshot.error) {
@@ -23,5 +15,5 @@ export const useQuery = (
 
 // Loaders that are used in more than one place are declared here, otherwise they're colocated with the component
 export function useSettings(initial) {
-  return useQuery(settingsQuery, {}, { initial })
+  return useQuery(settingsQuery, {}, {initial})
 }

@@ -5,17 +5,17 @@ const serif = Rubik({
   variable: '--font-serif',
   style: ['normal', 'italic'],
   subsets: ['latin'],
-  weight: ['300','400','500','600','700','800','900'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
 })
 const sans = Lexend_Deca({
   variable: '--font-sans',
   subsets: ['latin'],
-  weight: ['100','200','300','400','500','600','700','800','900'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 })
 const mono = Roboto_Mono({
   variable: '--font-mono',
   subsets: ['latin'],
-  weight: ['100','200','300','400','500','600','700'],
+  weight: ['100', '200', '300', '400', '500', '600', '700'],
 })
 
 export default async function RootLayout({children}) {

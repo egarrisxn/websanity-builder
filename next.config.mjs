@@ -4,8 +4,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: "cdn.sanity.io"
-      }
+        hostname: 'cdn.sanity.io',
+      },
     ],
   },
   logging: {
@@ -16,6 +16,6 @@ const nextConfig = {
   experimental: {
     taint: true,
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig

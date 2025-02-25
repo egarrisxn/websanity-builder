@@ -17,7 +17,7 @@ WebSanity Builder is a powerful, user-friendly web application designed to help 
 - **Tailwind CSS**: A CSS framework for rapidly building custom user interfaces.
 - **Sanity**: A customizable headless content management system.
 
-## Features 
+## Features
 
 - Real-time Content Editing: Leverage Sanity's CMS capabilities to manage your content in real time.
 - Responsive Design: Built with TailwindCSS to ensure your site looks great on any device.

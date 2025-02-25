@@ -1,6 +1,6 @@
 const GithubIcon = () => (
   <>
-    <a href='https://github.com/egarrisxn/international-worldwide' target='_blank'>
+    <a href='https://github.com/egarrisxn' target='_blank'>
       <div className='text-indigo-700 hover:text-indigo-900'>
         <div className='size-6'>
           <svg

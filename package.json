@@ -15,50 +15,41 @@
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "next dev",
+    "prebuild": "pnpm run lint",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "format": "prettier --check --ignore-path .gitignore .",
-    "lint": "next lint .",
-    "lint:fix": "pnpm run format && pnpm run lint -- --fix"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "dependencies": {
-    "@sanity/icons": "^3.4.0",
+    "@sanity/icons": "^3.6.0",
     "@sanity/image-url": "^1.1.0",
-    "@sanity/preview-url-secret": "^2.0.4",
-    "@sanity/react-loader": "^1.10.23",
-    "@sanity/ui": "^2.8.26",
-    "@sanity/vision": "^3.65.1",
+    "@sanity/preview-url-secret": "^2.1.4",
+    "@sanity/react-loader": "^1.10.46",
+    "@sanity/ui": "^2.14.3",
+    "@sanity/vision": "^3.77.1",
     "classnames": "^2.5.1",
-    "next": "^14.2.4",
-    "next-sanity": "^9.8.19",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "sanity": "^3.65.1",
+    "next": "15.1.7",
+    "next-sanity": "^9.8.59",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "sanity": "^3.77.1",
     "server-only": "0.0.1",
-    "styled-components": "^6.1.13"
+    "styled-components": "^6.1.15",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.15",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.4",
-    "eslint-config-prettier": "^9.1.0",
-    "postcss": "^8.4.49",
-    "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.9",
-    "tailwindcss": "^3.4.15"
-  },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "jsxSingleQuote": true,
-    "bracketSpacing": false,
-    "semi": false,
-    "useTabs": false,
-    "tabWidth": 2,
-    "plugins": [
-      "prettier-plugin-tailwindcss"
-    ]
+    "@eslint/eslintrc": "^3.3.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "eslint": "^9.19.0",
+    "eslint-config-next": "15.1.7",
+    "eslint-config-prettier": "^10.0.1",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^3.4.17"
   }
 }

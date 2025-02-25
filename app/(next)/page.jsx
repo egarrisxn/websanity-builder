@@ -1,16 +1,17 @@
 import dynamic from 'next/dynamic'
-import { draftMode } from 'next/headers'
-import { loadHomePage } from '@/sanity/loader/loadQuery'
-import { studioUrl } from '@/sanity/lib/api'
-import { HomePage } from '@/components/pages/home/HomePage'
+import {draftMode} from 'next/headers'
+import {loadHomePage} from '@/sanity/loader/loadQuery'
+import {studioUrl} from '@/sanity/lib/api'
+import {HomePage} from '@/components/pages/home/HomePage'
 import Link from 'next/link'
 
 const HomePagePreview = dynamic(() => import('@/components/pages/home/HomePagePreview'))
 
 export default async function IndexRoute() {
   const initial = await loadHomePage()
+  const {isEnabled} = await draftMode()
 
-  if (draftMode().isEnabled) {
+  if (isEnabled) {
     return <HomePagePreview initial={initial} />
   }
 

@@ -13,7 +13,7 @@ export function HomePage({data, encodeDataAttribute}) {
       {title && <Header centered title={title} description={overview} />}
       {/* Showcase Projects */}
       {showcaseProjects && showcaseProjects.length > 0 && (
-        <div className='mx-auto max-w-[100rem] rounded-md border-2 shadow-lg'>
+        <div className='mx-auto max-w-[100rem]'>
           {showcaseProjects.map((project, key) => {
             const href = resolveHref(project?._type, project?.slug)
             if (!href) {

@@ -1,5 +1,7 @@
+import tailwindcssAnimate from 'tailwindcss-animate'
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -12,5 +14,6 @@ module.exports = {
       serif: 'var(--font-serif)',
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [tailwindcssAnimate],
 }
+export default config

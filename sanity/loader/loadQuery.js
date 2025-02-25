@@ -14,16 +14,19 @@ queryStore.setServerClient(serverClient)
 
 const usingCdn = serverClient.config().useCdn
 // Automatically handle draft mode
-export const loadQuery = (query, params = {}, options = {}) => {
-  const {perspective = draftMode().isEnabled ? 'previewDrafts' : 'published'} = options
+export const loadQuery = async (query, params = {}, options = {}) => {
+  const {isEnabled} = await draftMode() // Await draftMode()
+
+  const {perspective = isEnabled ? 'previewDrafts' : 'published'} = options
+
   // Don't cache by default
   let revalidate = 0
-  // If `next.tags` is set, and we're not using the CDN, then it's safe to cache
   if (!usingCdn && Array.isArray(options.next?.tags)) {
     revalidate = false
   } else if (usingCdn) {
     revalidate = 60
   }
+
   return queryStore.loadQuery(query, params, {
     ...options,
     next: {
@@ -32,7 +35,7 @@ export const loadQuery = (query, params = {}, options = {}) => {
     },
     perspective,
     // Enable stega if in Draft Mode, to enable overlays when outside Sanity Studio
-    stega: draftMode().isEnabled,
+    stega: isEnabled,
   })
 }
 

@@ -6,8 +6,8 @@ export function ProjectListItem(props) {
 
   return (
     <div
-      className={`flex flex-col gap-x-5 p-2 transition hover:bg-orange-50/50 xl:flex-row ${
-        odd && 'border-b border-t xl:flex-row-reverse'
+      className={`my-6 flex flex-col gap-x-5 rounded-md border-2 p-2 shadow-lg transition hover:bg-orange-50/50 xl:flex-row ${
+        odd && 'xl:flex-row-reverse'
       }`}
     >
       <div className='w-full xl:w-9/12'>
@@ -29,9 +29,7 @@ function TextBox({project}) {
     <div className='relative mt-2 flex w-full flex-col justify-between p-3 xl:mt-0'>
       <div>
         {/* Title */}
-        <div className='mb-2 text-xl font-bold tracking-tight md:text-2xl'>
-          {project.title}
-        </div>
+        <div className='mb-2 text-xl font-bold tracking-tight md:text-2xl'>{project.title}</div>
         {/* Overview  */}
         <div className='font-serif text-slate-600'>
           <CustomPortableText value={project.overview} />
@@ -40,7 +38,10 @@ function TextBox({project}) {
       {/* Tags */}
       <div className='mt-4 flex flex-row gap-x-2'>
         {project.tags?.map((tag, key) => (
-          <div className='text-sm font-medium lowercase text-indigo-700 hover:text-indigo-900 md:text-lg' key={key}>
+          <div
+            className='text-sm font-medium lowercase text-indigo-700 hover:text-indigo-900 md:text-lg'
+            key={key}
+          >
             #{tag}
           </div>
         ))}

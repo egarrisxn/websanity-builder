@@ -33,9 +33,11 @@ export const viewport = {
 }
 
 export default async function IndexRouteLayout({children}) {
+  const {isEnabled} = await draftMode()
+
   return (
     <>
-      <div className='flex min-h-screen flex-col bg-orange-50  text-slate-900'>
+      <div className='flex min-h-screen flex-col bg-orange-50 text-slate-900'>
         <Suspense>
           <Navbar />
         </Suspense>
@@ -46,7 +48,7 @@ export default async function IndexRouteLayout({children}) {
           <Footer />
         </Suspense>
       </div>
-      {draftMode().isEnabled && <LiveVisualEditing />}
+      {isEnabled && <LiveVisualEditing />}
     </>
   )
 }

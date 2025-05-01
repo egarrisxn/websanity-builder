@@ -20,7 +20,10 @@ const mono = Roboto_Mono({
 
 export default async function RootLayout({children}) {
   return (
-    <html lang='en' className={`${mono.variable} ${sans.variable} ${serif.variable}`}>
+    <html
+      lang='en'
+      className={`${mono.variable} ${sans.variable} ${serif.variable}`}
+    >
       <body>{children}</body>
     </html>
   )

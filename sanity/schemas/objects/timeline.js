@@ -43,7 +43,8 @@ export default defineType({
             },
             prepare({items, title}) {
               const hasItems = items && items.length > 0
-              const milestoneNames = hasItems && items.map((timeline) => timeline.title).join(', ')
+              const milestoneNames =
+                hasItems && items.map((timeline) => timeline.title).join(', ')
 
               return {
                 subtitle: hasItems
@@ -63,7 +64,8 @@ export default defineType({
     },
     prepare({items}) {
       const hasItems = items && items.length > 0
-      const timelineNames = hasItems && items.map((timeline) => timeline.title).join(', ')
+      const timelineNames =
+        hasItems && items.map((timeline) => timeline.title).join(', ')
 
       return {
         title: 'Timelines',

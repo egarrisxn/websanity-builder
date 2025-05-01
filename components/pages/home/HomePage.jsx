@@ -23,7 +23,11 @@ export function HomePage({data, encodeDataAttribute}) {
               <Link
                 key={key}
                 href={href}
-                data-sanity={encodeDataAttribute?.(['showcaseProjects', key, 'slug'])}
+                data-sanity={encodeDataAttribute?.([
+                  'showcaseProjects',
+                  key,
+                  'slug',
+                ])}
               >
                 <ProjectListItem project={project} odd={key % 2} />
               </Link>

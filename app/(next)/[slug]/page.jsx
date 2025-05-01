@@ -9,11 +9,14 @@ import {Page} from '@/components/pages/page/Page'
 const PagePreview = dynamic(() => import('@/components/pages/page/PagePreview'))
 
 export async function generateMetadata({params}, parent) {
-  const {data: page} = await loadPage(params.slug)
+  const awaitedParams = await params
+  const {data: page} = await loadPage(awaitedParams.slug)
 
   return {
     title: page?.title,
-    description: page?.overview ? toPlainText(page.overview) : (await parent).description,
+    description: page?.overview
+      ? toPlainText(page.overview)
+      : (await parent)?.description,
   }
 }
 
@@ -22,11 +25,12 @@ export function generateStaticParams() {
 }
 
 export default async function PageSlugRoute({params}) {
-  const initial = await loadPage(params.slug)
+  const awaitedParams = await params
+  const initial = await loadPage(awaitedParams.slug)
   const {isEnabled} = await draftMode()
 
   if (isEnabled) {
-    return <PagePreview params={params} initial={initial} />
+    return <PagePreview params={awaitedParams} initial={initial} />
   }
 
   if (!initial.data) {

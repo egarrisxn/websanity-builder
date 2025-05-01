@@ -11,7 +11,10 @@ export function TimelineSection({timelines}) {
 
             {milestones?.map((experience, index) => (
               <div key={index}>
-                <TimelineItem milestone={experience} isLast={milestones.length - 1 === index} />
+                <TimelineItem
+                  milestone={experience}
+                  isLast={milestones.length - 1 === index}
+                />
               </div>
             ))}
           </div>

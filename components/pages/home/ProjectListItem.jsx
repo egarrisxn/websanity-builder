@@ -29,7 +29,9 @@ function TextBox({project}) {
     <div className='relative mt-2 flex w-full flex-col justify-between p-3 xl:mt-0'>
       <div>
         {/* Title */}
-        <div className='mb-2 text-xl font-bold tracking-tight md:text-2xl'>{project.title}</div>
+        <div className='mb-2 text-xl font-bold tracking-tight md:text-2xl'>
+          {project.title}
+        </div>
         {/* Overview  */}
         <div className='font-serif text-slate-600'>
           <CustomPortableText value={project.overview} />
@@ -39,7 +41,7 @@ function TextBox({project}) {
       <div className='mt-4 flex flex-row gap-x-2'>
         {project.tags?.map((tag, key) => (
           <div
-            className='text-sm font-medium lowercase text-indigo-700 hover:text-indigo-900 md:text-lg'
+            className='text-sm font-medium text-indigo-700 lowercase hover:text-indigo-900 md:text-lg'
             key={key}
           >
             #{tag}

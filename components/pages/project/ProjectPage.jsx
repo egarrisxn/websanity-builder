@@ -5,7 +5,16 @@ import ImageBox from '@/components/shared/ImageBox'
 
 export function ProjectPage({data, encodeDataAttribute}) {
   // Default to an empty object to allow previews on non-existent documents
-  const {client, coverImage, description, duration, overview, site, tags, title} = data ?? {}
+  const {
+    client,
+    coverImage,
+    description,
+    duration,
+    overview,
+    site,
+    tags,
+    title,
+  } = data ?? {}
 
   const startYear = new Date(duration?.start).getFullYear()
   const endYear = duration?.end ? new Date(duration?.end).getFullYear() : 'Now'
@@ -33,9 +42,13 @@ export function ProjectPage({data, encodeDataAttribute}) {
               <div className='p-3 lg:p-4'>
                 <div className='text-xs md:text-sm'>Duration</div>
                 <div className='text-md md:text-lg'>
-                  <span data-sanity={encodeDataAttribute?.('duration.start')}>{startYear}</span>
+                  <span data-sanity={encodeDataAttribute?.('duration.start')}>
+                    {startYear}
+                  </span>
                   {' - '}
-                  <span data-sanity={encodeDataAttribute?.('duration.end')}>{endYear}</span>
+                  <span data-sanity={encodeDataAttribute?.('duration.end')}>
+                    {endYear}
+                  </span>
                 </div>
               </div>
             )}

@@ -16,7 +16,9 @@ export default function NavbarLayout(props) {
             <Link
               key={key}
               className={`text-lg hover:text-indigo-900 md:text-xl ${
-                menuItem?._type === 'home' ? 'font-bold text-indigo-700' : 'text-slate-600'
+                menuItem?._type === 'home'
+                  ? 'font-bold text-indigo-700'
+                  : 'text-slate-600'
               }`}
               href={href}
             >

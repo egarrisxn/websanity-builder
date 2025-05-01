@@ -10,7 +10,8 @@ export default function ImageBox({
   classesWrapper,
   ...props
 }) {
-  const imageUrl = image && urlForImage(image)?.height(height).width(width).fit('crop').url()
+  const imageUrl =
+    image && urlForImage(image)?.height(height).width(width).fit('crop').url()
 
   return (
     <div

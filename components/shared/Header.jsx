@@ -9,7 +9,9 @@ export function Header(props) {
     <div className='w-5/6 lg:w-3/5'>
       {/* Title */}
       {title && (
-        <div className='text-3xl font-bold tracking-tight md:text-5xl xl:text-7xl'>{title}</div>
+        <div className='text-3xl font-bold tracking-tight md:text-5xl xl:text-7xl'>
+          {title}
+        </div>
       )}
       {/* Description */}
       {description && (

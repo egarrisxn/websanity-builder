@@ -3,7 +3,12 @@ import * as queryStore from '@sanity/react-loader'
 import {draftMode} from 'next/headers'
 import {client} from '../lib/client'
 import {token} from '../lib/token'
-import {homePageQuery, pagesBySlugQuery, projectBySlugQuery, settingsQuery} from '../lib/queries'
+import {
+  homePageQuery,
+  pagesBySlugQuery,
+  projectBySlugQuery,
+  settingsQuery,
+} from '../lib/queries'
 
 const serverClient = client.withConfig({
   token,
@@ -41,7 +46,11 @@ export const loadQuery = async (query, params = {}, options = {}) => {
 
 //Loaders that are used in more than one place are declared here, otherwise they're colocated with the component
 export function loadSettings() {
-  return loadQuery(settingsQuery, {}, {next: {tags: ['settings', 'home', 'page', 'project']}})
+  return loadQuery(
+    settingsQuery,
+    {},
+    {next: {tags: ['settings', 'home', 'page', 'project']}},
+  )
 }
 
 export function loadHomePage() {
@@ -49,7 +58,11 @@ export function loadHomePage() {
 }
 
 export function loadProject(slug) {
-  return loadQuery(projectBySlugQuery, {slug}, {next: {tags: [`project:${slug}`]}})
+  return loadQuery(
+    projectBySlugQuery,
+    {slug},
+    {next: {tags: [`project:${slug}`]}},
+  )
 }
 
 export function loadPage(slug) {

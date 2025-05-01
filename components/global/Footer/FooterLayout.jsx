@@ -5,7 +5,7 @@ export default function FooterLayout(props) {
   const {data} = props
   const footer = data?.footer
   return (
-    <footer className='bottom-0 flex w-full flex-row items-center justify-between bg-orange-50 px-4 pb-8 pt-24 md:px-16 lg:px-32'>
+    <footer className='bottom-0 flex w-full flex-row items-center justify-between bg-orange-50 px-4 pt-24 pb-8 md:px-16 lg:px-32'>
       <GithubIcon />
       {footer && (
         <CustomPortableText

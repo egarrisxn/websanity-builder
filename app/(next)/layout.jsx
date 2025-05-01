@@ -8,10 +8,15 @@ import {urlForOpenGraphImage} from '@/sanity/lib/utils'
 import {Navbar} from '@/components/global/Navbar'
 import {Footer} from '@/components/global/Footer'
 
-const LiveVisualEditing = dynamic(() => import('@/sanity/loader/LiveVisualEditing'))
+const LiveVisualEditing = dynamic(
+  () => import('@/sanity/loader/LiveVisualEditing'),
+)
 
 export async function generateMetadata() {
-  const [{data: settings}, {data: homePage}] = await Promise.all([loadSettings(), loadHomePage()])
+  const [{data: settings}, {data: homePage}] = await Promise.all([
+    loadSettings(),
+    loadHomePage(),
+  ])
 
   const ogImage = urlForOpenGraphImage(settings?.ogImage)
   return {
@@ -21,7 +26,9 @@ export async function generateMetadata() {
           default: 'WebSanity' || homePage.title,
         }
       : undefined,
-    description: homePage?.overview ? toPlainText(homePage.overview) : undefined,
+    description: homePage?.overview
+      ? toPlainText(homePage.overview)
+      : undefined,
     openGraph: {
       images: ogImage ? [ogImage] : [],
     },

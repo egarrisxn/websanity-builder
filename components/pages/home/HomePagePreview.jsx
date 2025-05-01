@@ -9,7 +9,9 @@ export default function HomePagePreview(props) {
 
   if (!data) {
     return (
-      <div className='text-center'>Please start editing your Home document to see the preview!</div>
+      <div className='text-center'>
+        Please start editing your Home document to see the preview!
+      </div>
     )
   }
 

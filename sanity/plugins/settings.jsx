@@ -5,7 +5,9 @@ export const singletonPlugin = (types) => {
       // Hide 'Singletons (such as Home)' from new document options
       newDocumentOptions: (prev, {creationContext}) => {
         if (creationContext.type === 'global') {
-          return prev.filter((templateItem) => !types.includes(templateItem.templateId))
+          return prev.filter(
+            (templateItem) => !types.includes(templateItem.templateId),
+          )
         }
 
         return prev
@@ -29,12 +31,18 @@ export const pageStructure = (typeDefArray) => {
       return S.listItem()
         .title(typeDef.title)
         .icon(typeDef.icon)
-        .child(S.editor().id(typeDef.name).schemaType(typeDef.name).documentId(typeDef.name))
+        .child(
+          S.editor()
+            .id(typeDef.name)
+            .schemaType(typeDef.name)
+            .documentId(typeDef.name),
+        )
     })
 
     // The default root list items (except custom ones)
     const defaultListItems = S.documentTypeListItems().filter(
-      (listItem) => !typeDefArray.find((singleton) => singleton.name === listItem.getId()),
+      (listItem) =>
+        !typeDefArray.find((singleton) => singleton.name === listItem.getId()),
     )
 
     return S.list()

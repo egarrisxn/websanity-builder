@@ -3,7 +3,6 @@ import {pageData, projectData} from '../sanity/lib/data'
 export default async function sitemap() {
   const pages = await pageData()
   const projects = await projectData()
-
   const baseUrl = 'https://websanitybuilder.vercel.app'
 
   const staticRoutes = [

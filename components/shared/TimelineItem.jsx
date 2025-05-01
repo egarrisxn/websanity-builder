@@ -2,7 +2,9 @@ import ImageBox from './ImageBox'
 
 export function TimelineItem({isLast, milestone}) {
   const {description, duration, image, tags, title} = milestone
-  const startYear = duration?.start ? new Date(duration.start).getFullYear() : undefined
+  const startYear = duration?.start
+    ? new Date(duration.start).getFullYear()
+    : undefined
   const endYear = duration?.end ? new Date(duration.end).getFullYear() : 'Now'
 
   return (
@@ -38,7 +40,7 @@ export function TimelineItem({isLast, milestone}) {
           {startYear} - {endYear}
         </div>
         {/* Description */}
-        <div className='pb-5 pt-3 font-serif text-slate-700'>{description}</div>
+        <div className='pt-3 pb-5 font-serif text-slate-700'>{description}</div>
       </div>
     </div>
   )

@@ -7,18 +7,23 @@ import {generateStaticSlugs} from '@/sanity/loader/generateStaticSlugs'
 import {loadProject} from '@/sanity/loader/loadQuery'
 import {ProjectPage} from '@/components/pages/project/ProjectPage'
 
-const ProjectPreview = dynamic(() => import('@/components/pages/project/ProjectPreview'))
+const ProjectPreview = dynamic(
+  () => import('@/components/pages/project/ProjectPreview'),
+)
 
 export async function generateMetadata({params}, parent) {
-  const {data: project} = await loadProject(params.slug)
+  const awaitedParams = await params
+  const {data: project} = await loadProject(awaitedParams.slug)
   const ogImage = urlForOpenGraphImage(project?.coverImage)
 
   return {
     title: project?.title,
-    description: project?.overview ? toPlainText(project.overview) : (await parent).description,
+    description: project?.overview
+      ? toPlainText(project.overview)
+      : (await parent)?.description,
     openGraph: ogImage
       ? {
-          images: [ogImage, ...((await parent).openGraph?.images || [])],
+          images: [ogImage, ...((await parent)?.openGraph?.images || [])],
         }
       : {},
   }
@@ -29,11 +34,12 @@ export function generateStaticParams() {
 }
 
 export default async function ProjectSlugRoute({params}) {
-  const initial = await loadProject(params.slug)
+  const awaitedParams = await params
+  const initial = await loadProject(awaitedParams.slug)
   const {isEnabled} = await draftMode()
 
   if (isEnabled) {
-    return <ProjectPreview params={params} initial={initial} />
+    return <ProjectPreview params={awaitedParams} initial={initial} />
   }
 
   if (!initial.data) {

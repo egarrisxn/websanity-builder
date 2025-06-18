@@ -24,7 +24,9 @@ export default async function RootLayout({children}) {
       lang='en'
       className={`${mono.variable} ${sans.variable} ${serif.variable}`}
     >
+      <head>
     <meta name="apple-mobile-web-app-title" content='WebSanity Builder' />
+    </head>
       <body>{children}</body>
     </html>
   )

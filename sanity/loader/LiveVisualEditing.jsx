@@ -1,6 +1,6 @@
 'use client'
 import {useLiveMode} from '@sanity/react-loader'
-import {VisualEditing} from 'next-sanity'
+// import {VisualEditing} from 'next-sanity'
 import {useEffect} from 'react'
 import {client} from '../lib/client'
 

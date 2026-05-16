@@ -15,7 +15,15 @@ const eslintConfig = [
     rules: {},
   }),
   {
-    ignores: ['**/node_modules/', '.git/', '.vscode/', '.next/', 'public/'],
+    ignores: [
+    ".next/**",
+    ".git/**",
+    ".vscode/**",
+    "public/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+    "**/node_modules/",],
   },
 ]
 

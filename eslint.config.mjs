@@ -12,18 +12,19 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.config({
     extends: ['next/core-web-vitals', 'prettier'],
-    rules: {},
+    rules: {'@next/next/no-img-element': 'off'},
   }),
   {
     ignores: [
-    ".next/**",
-    ".git/**",
-    ".vscode/**",
-    "public/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-    "**/node_modules/",],
+      '.next/**',
+      '.git/**',
+      '.vscode/**',
+      'public/**',
+      'out/**',
+      'build/**',
+      'next-env.d.ts',
+      '**/node_modules/',
+    ],
   },
 ]
 

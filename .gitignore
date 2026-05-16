@@ -26,3 +26,5 @@ studio/.env.development
 /.sanity
 /logs
 *.log
+.vercel
+.env*.local
